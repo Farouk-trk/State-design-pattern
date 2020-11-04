@@ -45,7 +45,6 @@ class TurnstileStates():
     def enter(self):
         pass
 
-    
     def pay(self):
         pass
 
@@ -74,6 +73,12 @@ class ClosedTurnstile(TurnstileStates):
         print("client request: pay ")
         self.gate.transition_to(ProcPaiment(self.gate))
         print("     State ---------> processing payment \n")
+    
+    def payOk(self) :
+        pass
+    
+    def payFailed(self) :
+        pass
     
 
 class ProcPaiment(TurnstileStates):
@@ -111,6 +116,13 @@ class OpenTurnstile(TurnstileStates):
     def pay(self) :
         print("client request: pay")
         print("You have already paid. You can enter \n")
+    
+    def payOk(self) :
+        pass
+    
+    def payFailed(self) :
+        pass
+
     
 
 
